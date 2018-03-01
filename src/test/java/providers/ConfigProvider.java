@@ -10,16 +10,9 @@ public class ConfigProvider {
     private static Properties properties = new Properties();
     private static InputStream input = null;
 
-    public static String getBrowser() throws IOException {
-        getInput();
-        return properties.getProperty("browser");
-    }
-    public static String getURL() throws IOException {
-        getInput();
-        return properties.getProperty("URL");
-    }
-    private static void getInput() throws IOException {
+    public static String get(String property) throws IOException {
         input = new FileInputStream("dataConfiguration.properties");
         properties.load(input);
+        return properties.getProperty(property);
     }
 }

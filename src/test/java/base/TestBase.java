@@ -27,7 +27,7 @@ public class TestBase {
     private int screenId = 0;
 
     private static void printBrowserLogs(WebDriver driver) throws IOException {
-        if (!ConfigProvider.getBrowser().equals("FIREFOX")) {
+        if (!ConfigProvider.get("browser").equals("FIREFOX")) {
             System.out.println("Browser logs");
             LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
             for (LogEntry entry : logEntries) {
