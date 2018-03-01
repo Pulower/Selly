@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeTest;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TestBase {
@@ -22,22 +23,27 @@ public class TestBase {
     protected WebDriver driver;
     private String address = "https://demo.selly.pl/";
     private DriverManager driverManager;
-    private static int screenId = 0;
+    private int screenId = 0;
 
     private static void printBrowserLogs(WebDriver driver){
         System.out.println("Browser logs");
         LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
         for(LogEntry entry : logEntries){
-            System.out.println("Timestamp: " + new Date(entry.getTimestamp()) +
-                    "\nLevel: " + entry.getLevel() +
-                    "\nMessage: " + entry.getMessage());
+            System.out.println(new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage());
         }
     }
 
     private void takeScreenshot() throws IOException {
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("resources/screenshots/" + Integer.toString(screenId) + ".jpg"));
+        FileUtils.copyFile(scrFile, new File("resources/screenshots/" + Integer.toString(screenId) + getDate() + ".jpg"));
         screenId++;
+    }
+
+    private String getDate(){
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("_dd-MM-yyyy_HH-mm-ss");
+        String dateString = dateFormat.format(date);
+        return dateString;
     }
 
     @BeforeTest
