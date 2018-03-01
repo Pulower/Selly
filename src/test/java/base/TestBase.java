@@ -12,6 +12,7 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import providers.ConfigProvider;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,11 +26,13 @@ public class TestBase {
     private DriverManager driverManager;
     private int screenId = 0;
 
-    private static void printBrowserLogs(WebDriver driver){
-        System.out.println("Browser logs");
-        LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
-        for(LogEntry entry : logEntries){
-            System.out.println(new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage());
+    private static void printBrowserLogs(WebDriver driver) throws IOException {
+        if (!ConfigProvider.getBrowser().equals("FIREFOX")) {
+            System.out.println("Browser logs");
+            LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
+            for (LogEntry entry : logEntries) {
+                System.out.println(new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage());
+            }
         }
     }
 
