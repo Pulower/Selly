@@ -10,16 +10,12 @@ public class WebElementManipulator {
     protected WebDriverWait wait;
     protected JavascriptExecutor js = (JavascriptExecutor)driver;
 
-    private void waitUntilElementIsVisible(WebElement element){
-        wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
     private void waitUntilElementIsClickable(WebElement element){
+        wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     private void clickOnElement(WebElement element){
-        waitUntilElementIsVisible(element);
         waitUntilElementIsClickable(element);
         element.click();
     }
