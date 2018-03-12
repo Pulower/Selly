@@ -8,15 +8,22 @@ public class WebElementManipulator {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected JavascriptExecutor js = (JavascriptExecutor)driver;
+    protected JavascriptExecutor js = (JavascriptExecutor) driver;
 
-    private void waitUntilElementIsClickable(WebElement element){
+    public WebElementManipulator(WebDriver driver) {
         wait = new WebDriverWait(driver, 10);
+    }
+
+    private void waitUntilElementIsClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    private void clickOnElement(WebElement element){
+    protected void clickOnElement(WebElement element) {
         waitUntilElementIsClickable(element);
         element.click();
+    }
+
+    protected void waitForVisibilityOf(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 }
