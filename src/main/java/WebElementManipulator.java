@@ -11,6 +11,7 @@ public class WebElementManipulator {
     protected JavascriptExecutor js = (JavascriptExecutor) driver;
 
     public WebElementManipulator(WebDriver driver) {
+        this.driver = driver;
         wait = new WebDriverWait(driver, 10);
     }
 
