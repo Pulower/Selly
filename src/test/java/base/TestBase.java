@@ -54,6 +54,7 @@ public class TestBase {
         driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
         driver = driverManager.getDriver();
         driver.get(address);
+        driver.manage().window().maximize();
     }
 
     @AfterTest
