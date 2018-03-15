@@ -3,6 +3,7 @@ package base;
 import Driver.DriverManager;
 import Driver.DriverManagerFactory;
 import Driver.DriverType;
+import Pages.LeftNavigationPanelPage;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -37,12 +38,12 @@ public class TestBase {
     }
 
     private void takeScreenshot() throws IOException {
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrFile, new File("resources/screenshots/" + Integer.toString(screenId) + getDate() + ".jpg"));
         screenId++;
     }
 
-    private String getDate(){
+    private String getDate() {
         Date date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("_dd-MM-yyyy_HH-mm-ss");
         String dateString = dateFormat.format(date);
@@ -50,11 +51,13 @@ public class TestBase {
     }
 
     @BeforeTest
-    public void setUpDriver(){
+    public void setUpDriver() {
         driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
         driver = driverManager.getDriver();
         driver.get(address);
         driver.manage().window().maximize();
+        LeftNavigationPanelPage leftPanel = new LeftNavigationPanelPage(driver);
+        leftPanel.acceptCookies();
     }
 
     @AfterTest
