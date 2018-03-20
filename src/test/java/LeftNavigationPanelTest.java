@@ -2,10 +2,17 @@ import Pages.LeftMenu;
 import Pages.LeftNavigationPanelPage;
 import base.TestBase;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class LeftNavigationPanelTest extends TestBase {
+
+    @BeforeTest
+    public void acceptCookies(){
+        LeftNavigationPanelPage leftPanel = new LeftNavigationPanelPage(driver);
+        leftPanel.acceptCookies();
+    }
 
     @Test(dataProvider = "LeftPanelProvider")
     public void leftNavigationPanelTest(LeftMenu menuItem, String pageTitle) {
@@ -13,15 +20,15 @@ public class LeftNavigationPanelTest extends TestBase {
         leftPanel.navigateTo(menuItem);
         Assert.assertEquals(driver.getTitle(), pageTitle);
         if (leftPanel.isInPromotion()) {
-            leftPanel.checkPromotions();
+            leftPanel.clickPromotions();
             Assert.assertEquals(driver.getTitle(), pageTitle + ". Promocje");
         }
         if (leftPanel.isBestseller()) {
-            leftPanel.checkBestsellers();
+            leftPanel.clickBestsellers();
             Assert.assertEquals(driver.getTitle(), pageTitle + ". Bestsellery");
         }
         if (leftPanel.isNew()) {
-            leftPanel.checkNews();
+            leftPanel.clickNews();
             Assert.assertEquals(driver.getTitle(), pageTitle + ". Nowości");
         }
     }

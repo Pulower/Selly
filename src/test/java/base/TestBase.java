@@ -56,8 +56,6 @@ public class TestBase {
         driver = driverManager.getDriver();
         driver.get(address);
         driver.manage().window().maximize();
-        LeftNavigationPanelPage leftPanel = new LeftNavigationPanelPage(driver);
-        leftPanel.acceptCookies();
     }
 
     @AfterTest
