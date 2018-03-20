@@ -11,151 +11,148 @@ public class LeftNavigationPanelPage extends WebElementManipulator {
         super(driver);
     }
 
-    @FindBy(partialLinkText = "Promocje")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'promocje')]")
     private WebElement promotions;
 
-    @FindBy(partialLinkText = "Bestsellery")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'bestsellery')]")
     private WebElement bestsellers;
 
-    @FindBy(partialLinkText = "Nowości")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'nowosci')]")
     private WebElement news;
 
-    @FindBy(xpath = "//a[@class='close btn color1']")
-    private WebElement cookies;
-
-    @FindBy(partialLinkText = "Sklep RTV")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'sklep-rtv')]")
     private WebElement rtvShop;
 
-    @FindBy(partialLinkText = "Telewizory LCD")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'lcd')]")
     private WebElement lcdTv;
 
-    @FindBy(partialLinkText = "Telewizory LED")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'led')]")
     private WebElement ledTv;
 
-    @FindBy(partialLinkText = "Telewizory 3D")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, '3d')]")
     private WebElement tv3d;
 
-    @FindBy(partialLinkText = "Odtwarzacze DVD")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'dvd')]")
     private WebElement dvd;
 
-    @FindBy(partialLinkText = "Akcesoria RTV")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'akcesoria-rtv')]")
     private WebElement rtv;
 
-    @FindBy(partialLinkText = "Sklep AGD")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'agd')]")
     private WebElement agdShop;
 
-    @FindBy(partialLinkText = "Sklep z zabawkami")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'sklep-z-zabawkami')]")
     private WebElement toysShop;
 
-    @FindBy(partialLinkText = "Sklep militaria")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'sklep-militaria')]")
     private WebElement militaryShop;
 
-    @FindBy(partialLinkText = "Wiatrówki")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'wiatrowki,c7.html')]")
     private WebElement airguns;
 
-    @FindBy(partialLinkText = "Wiatrówki karabinki")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'karabinki')]")
     private WebElement airgunsRifle;
 
-    @FindBy(partialLinkText = "Wiatrówki pistolety")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'pistolety')]")
     private WebElement airgunsPistol;
 
-    @FindBy(partialLinkText = "Akcesoria do wiatrówek")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'akcesoria-do-wiatrowek')]")
     private WebElement airgunsAccesory;
 
-    @FindBy(partialLinkText = "Celowniki")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'celowniki')]")
     private WebElement scopes;
 
-    @FindBy(partialLinkText = "Śruty")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'sruty')]")
     private WebElement shot;
 
-    @FindBy(partialLinkText = "Naboje CO2")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'co2')]")
     private WebElement co2;
 
-    @FindBy(partialLinkText = "Tarcze")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'tarcze')]")
     private WebElement shields;
 
-    @FindBy(partialLinkText = "Air Soft Gun")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'air-soft-gun')]")
     private WebElement asg;
 
-    @FindBy(partialLinkText = "Paintball")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'paintball')]")
     private WebElement paintball;
 
-    @FindBy(partialLinkText = "Fotografia")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'fotografia')]")
     private WebElement photography;
 
-    @FindBy(partialLinkText = "Aparaty cyfrowe")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'cyfrowe')]")
     private WebElement cameras;
 
-    @FindBy(partialLinkText = "Aparaty kompaktowe")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'kompaktowe')]")
     private WebElement compactCameras;
 
-    @FindBy(partialLinkText = "Lustrzanki cyfrowe")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'lustrzanki')]")
     private WebElement reflexCameras;
 
-    @FindBy(partialLinkText = "Obiektywy")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'obiektywy')]")
     private WebElement objectives;
 
-    @FindBy(partialLinkText = "Karty pamięci")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'karty-pamieci')]")
     private WebElement memoryCards;
 
-    @FindBy(partialLinkText = "Lampy błyskowe")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'lampy-blyskowe')]")
     private WebElement flasLamps;
 
-    @FindBy(partialLinkText = "albumy")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'albumy')]")
     private WebElement albums;
 
-    @FindBy(partialLinkText = "encyklopedie")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'encyklopedie')]")
     private WebElement encyclopedias;
 
-    @FindBy(partialLinkText = "dla dzieci")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'dla-dzieci')]")
     private WebElement kids;
 
-    @FindBy(partialLinkText = "biografie")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'biografie')]")
     private WebElement biography;
 
-    @FindBy(partialLinkText = "informatyka")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'informatyka')]")
     private WebElement it;
 
-    @FindBy(partialLinkText = "Zestawy produktów")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'zestawy')]")
     private WebElement sets;
 
-    @FindBy(partialLinkText = "dla pełnoletnich")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'dla-pelnoletnich')]")
     private WebElement adults;
 
-    @FindBy(partialLinkText = "z zaawansowanymi filtrami")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'z-zaawansowanymi-filtrami')]")
     private WebElement advanced;
 
-    @FindBy(partialLinkText = "checkbox")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'checkbox')]")
     private WebElement checkbox;
 
-    @FindBy(partialLinkText = "słownik")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'slownik')]")
     private WebElement dictionary;
 
-    @FindBy(partialLinkText = "wartość")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'wartosc')]")
     private WebElement value;
 
-    @FindBy(partialLinkText = "zakres")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'zakres')]")
     private WebElement range;
 
-    @FindBy(partialLinkText = "wg wymiarów")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'wg-wymiarow')]")
     private WebElement dimensions;
 
-    @FindBy(partialLinkText = "Produkty z wariantami")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'z-wariantami')]")
     private WebElement variants;
 
-    @FindBy(partialLinkText = "Produkty niestandardowe")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'niestandardowe')]")
     private WebElement custom;
 
-    @FindBy(partialLinkText = "Ebooki i audiobooki")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'ebooki-i-audiobooki')]")
     private WebElement ebooksAndAudiobooks;
 
-    @FindBy(partialLinkText = "ebooki")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'ebooki,')]")
     private WebElement ebooks;
 
-    @FindBy(partialLinkText = "audiobooki")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'audiobooki,')]")
     private WebElement audiobooks;
 
-    @FindBy(partialLinkText = "Zamów sklep internetowy")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'zamow-sklep')]")
     private WebElement internetShop;
 
 
@@ -345,10 +342,6 @@ public class LeftNavigationPanelPage extends WebElementManipulator {
         return this;
     }
 
-    public void acceptCookies() {
-        clickOnElement(cookies);
-    }
-
     public boolean isInPromotion() {
         try {
             promotions.isDisplayed();
@@ -376,15 +369,15 @@ public class LeftNavigationPanelPage extends WebElementManipulator {
         }
     }
 
-    public void checkPromotions() {
+    public void clickPromotions() {
         clickOnElement(promotions);
     }
 
-    public void checkBestsellers() {
+    public void clickBestsellers() {
         clickOnElement(bestsellers);
     }
 
-    public void checkNews() {
+    public void clickNews() {
         clickOnElement(news);
     }
 }
