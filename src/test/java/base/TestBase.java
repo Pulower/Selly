@@ -4,6 +4,7 @@ import Driver.DriverManager;
 import Driver.DriverManagerFactory;
 import Driver.DriverType;
 import Pages.LeftNavigationPanelPage;
+import Pages.WebElementManipulator;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -56,6 +57,8 @@ public class TestBase {
         driver = driverManager.getDriver();
         driver.get(address);
         driver.manage().window().maximize();
+        WebElementManipulator wem = new WebElementManipulator(driver);
+        wem.acceptCookies();
     }
 
     @AfterTest
