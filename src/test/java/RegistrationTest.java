@@ -28,7 +28,6 @@ public class RegistrationTest extends TestBase {
     public void correctRegistrationTest() throws IOException {
         fillUnchangeableFields();
         registration.setEmail(email + "@gmail.com").
-
                 setPassword(password, password)
                 .acceptReg()
                 .acceptAgreement()
