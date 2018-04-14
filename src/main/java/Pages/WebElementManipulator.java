@@ -36,6 +36,10 @@ public class WebElementManipulator {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    protected void waitForAlert(){
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
     public void acceptCookies() {
         clickOnElement(cookies);
     }
