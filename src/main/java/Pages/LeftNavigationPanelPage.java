@@ -11,6 +11,9 @@ public class LeftNavigationPanelPage extends WebElementManipulator {
         super(driver);
     }
 
+    @FindBy(id = "main-menu")
+    private WebElement menuContainer;
+
     @FindBy(xpath = "//*[@id=\"main-menu\"]/descendant::a[contains(@href, 'promocje')]")
     private WebElement promotions;
 
@@ -157,6 +160,7 @@ public class LeftNavigationPanelPage extends WebElementManipulator {
 
 
     public LeftNavigationPanelPage navigateTo(LeftMenu menuItem) {
+        waitForVisibilityOf(menuContainer);
         switch (menuItem) {
             case SKLEP_RTV: {
                 clickOnElement(rtvShop);

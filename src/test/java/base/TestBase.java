@@ -26,10 +26,11 @@ public class TestBase {
     protected WebDriver driver;
     private String address = "https://demo.selly.pl/";
     private DriverManager driverManager;
+    private WebElementManipulator wem;
     private int screenId = 0;
 
     private static void printBrowserLogs(WebDriver driver) throws IOException {
-        if (!ConfigProvider.get("browser").equals("FIREFOX")) {
+        if (!ConfigProvider.get("browser").equals("CHROME")) {
             System.out.println("Browser logs");
             LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
             for (LogEntry entry : logEntries) {
@@ -55,10 +56,12 @@ public class TestBase {
     public void setUpDriver() {
         driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
         driver = driverManager.getDriver();
+        wem = new WebElementManipulator(driver);
         driver.get(address);
         driver.manage().window().maximize();
-        WebElementManipulator wem = new WebElementManipulator(driver);
-        wem.acceptCookies();
+        driver.manage().deleteAllCookies();
+        if(driver.getPageSource().contains("Strona korzysta z plików cookies"))
+            wem.acceptCookies();
     }
 
     @AfterTest

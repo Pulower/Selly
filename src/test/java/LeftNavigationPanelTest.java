@@ -8,15 +8,11 @@ import org.testng.annotations.Test;
 
 public class LeftNavigationPanelTest extends TestBase {
 
-    @BeforeTest
-    public void acceptCookies(){
-        LeftNavigationPanelPage leftPanel = new LeftNavigationPanelPage(driver);
-        leftPanel.acceptCookies();
-    }
+    private LeftNavigationPanelPage leftPanel;
 
     @Test(dataProvider = "LeftPanelProvider")
     public void leftNavigationPanelTest(LeftMenu menuItem, String pageTitle) {
-        LeftNavigationPanelPage leftPanel = new LeftNavigationPanelPage(driver);
+        leftPanel = new LeftNavigationPanelPage(driver);
         leftPanel.navigateTo(menuItem);
         Assert.assertEquals(driver.getTitle(), pageTitle);
         if (leftPanel.isInPromotion()) {

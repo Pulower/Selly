@@ -39,4 +39,8 @@ public class WebElementManipulator {
     public void acceptCookies() {
         clickOnElement(cookies);
     }
+
+    protected void scrollIntoView(WebElement element) {
+        js.executeScript("arguments[0].scrollIntoView();", element);
+    }
 }
